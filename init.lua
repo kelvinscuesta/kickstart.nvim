@@ -76,7 +76,12 @@ vim.opt.confirm = true
 vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>')
 
 -- Diagnostic keymaps
-vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagnostic [Q]uickfix list' })
+vim.keymap.set('n', '<leader>e', vim.diagnostic.setloclist, { desc = 'Open diagnostic [Q]uickfix list' })
+
+-- Personal keymaps I like
+vim.keymap.set('n', '<leader>w', '<cmd>w!<CR>', { desc = 'Save the current buffer in normal mode' })
+vim.keymap.set('n', '<leader>q', '<cmd>q<CR>', { desc = 'Close the current buffer' })
+vim.keymap.set('i', 'jk', '<Esc>', { desc = 'Esc with jk in insert mode', noremap = true })
 
 -- Exit terminal mode in the builtin terminal with a shortcut that is a bit easier
 -- for people to discover. Otherwise, you normally need to press <C-\><C-n>, which
