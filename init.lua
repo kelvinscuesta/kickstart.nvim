@@ -4,10 +4,16 @@ vim.g.maplocalleader = ' '
 -- Set to true if you have a Nerd Font installed and selected in the terminal
 vim.g.have_nerd_font = true
 
+-- Unload netrw for neotree
+vim.g.loaded_netrwPlugin = 1
+vim.g.loaded_netrw = 1
+
 -- [[ Setting options ]]
 -- See `:help vim.opt`
 -- NOTE: You can change these options as you wish!
 --  For more options, you can see `:help option-list`
+
+vim.opt.termguicolors = true
 
 -- Make line numbers default
 vim.opt.number = true
@@ -82,6 +88,19 @@ vim.keymap.set('n', '<leader>e', vim.diagnostic.setloclist, { desc = 'Open diagn
 vim.keymap.set('n', '<leader>w', '<cmd>w!<CR>', { desc = 'Save the current buffer in normal mode' })
 vim.keymap.set('n', '<leader>q', '<cmd>q<CR>', { desc = 'Close the current buffer' })
 vim.keymap.set('i', 'jk', '<Esc>', { desc = 'Esc with jk in insert mode', noremap = true })
+
+-- Buffer keymaps
+-- Navigate to the next buffer
+vim.keymap.set('n', '<leader>bn', ':bnext<CR>', { noremap = true, silent = true })
+
+-- Navigate to the previous buffer
+vim.keymap.set('n', '<leader>bp', ':bprevious<CR>', { noremap = true, silent = true })
+
+-- Close the current buffer
+vim.keymap.set('n', '<leader>bd', ':bdelete<CR>', { noremap = true, silent = true })
+
+-- Switch to the last used buffer
+vim.keymap.set('n', '<leader>bl', ':b#<CR>', { noremap = true, silent = true })
 
 -- Exit terminal mode in the builtin terminal with a shortcut that is a bit easier
 -- for people to discover. Otherwise, you normally need to press <C-\><C-n>, which
@@ -245,7 +264,7 @@ require('lazy').setup({
         { '<leader>d', group = '[D]ocument' },
         { '<leader>r', group = '[R]ename' },
         { '<leader>s', group = '[S]earch' },
-        { '<leader>w', group = '[W]orkspace' },
+        -- { '<leader>w', group = '[W]orkspace' },
         { '<leader>t', group = '[T]oggle' },
         { '<leader>h', group = 'Git [H]unk', mode = { 'n', 'v' } },
       },
@@ -878,6 +897,61 @@ require('lazy').setup({
     --    - Incremental selection: Included, see `:help nvim-treesitter-incremental-selection-mod`
     --    - Show your current context: https://github.com/nvim-treesitter/nvim-treesitter-context
     --    - Treesitter + textobjects: https://github.com/nvim-treesitter/nvim-treesitter-textobjects
+  },
+  {
+    'akinsho/bufferline.nvim',
+    version = '*',
+    dependencies = 'nvim-tree/nvim-web-devicons',
+    config = function()
+      require('bufferline').setup {}
+    end,
+  },
+  {
+    'nvim-lualine/lualine.nvim',
+    dependencies = { 'nvim-tree/nvim-web-devicons' },
+    config = function()
+      require('lualine').setup {
+        options = {
+          icons_enabled = true,
+          theme = 'auto',
+          component_separators = { left = '', right = '' },
+          section_separators = { left = '', right = '' },
+          disabled_filetypes = {
+            statusline = {},
+            winbar = {},
+          },
+          ignore_focus = {},
+          always_divide_middle = true,
+          always_show_tabline = true,
+          globalstatus = false,
+          refresh = {
+            statusline = 100,
+            tabline = 100,
+            winbar = 100,
+          },
+        },
+        sections = {
+          lualine_a = { 'mode' },
+          lualine_b = { 'branch', 'diff', 'diagnostics' },
+          lualine_c = { 'filename' },
+          lualine_x = { 'encoding', 'fileformat', 'filetype' },
+          lualine_y = { 'progress' },
+          lualine_z = { 'location' },
+        },
+        inactive_sections = {
+          lualine_a = {},
+          lualine_b = {},
+          lualine_c = { 'filename' },
+          lualine_x = { 'location' },
+          lualine_y = {},
+          lualine_z = {},
+        },
+        tabline = {},
+        winbar = {},
+        inactive_winbar = {},
+        extensions = {},
+      }
+    end,
   },
 
   -- The following comments only work if you have downloaded the kickstart repo, not just copy pasted the
