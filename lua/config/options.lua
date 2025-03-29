@@ -46,5 +46,3 @@ vim.opt.timeoutlen = 300 -- Decrease mapped sequence wait time
 -- Sets how neovim will display certain whitespace characters in the editor.
 vim.opt.list = true
 vim.opt.listchars = { tab = '» ', trail = '·', nbsp = '␣' }
-
-vim.opt.cmdheight = 0 -- more space in the neovim command line for displaying messages
