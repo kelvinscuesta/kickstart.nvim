@@ -207,20 +207,18 @@ return {
       -- ts_ls = {},
       --
       gopls = {},
-      golines = {},
       cssls = {},
       css_variables = {},
       cssmodules_ls = {},
       tailwindcss = {},
       html = {},
       graphql = {},
-      emmet_ls = {},
       docker_compose_language_service = {},
       dockerls = {},
       prettierd = {},
       shellcheck = {},
+      vtsls = {},
       vimls = {},
-      markdownlint = {},
 
       lua_ls = {
         -- cmd = { ... },
@@ -254,10 +252,7 @@ return {
     local ensure_installed = vim.tbl_keys(servers or {})
     vim.list_extend(ensure_installed, {
       'stylua', -- Used to format Lua code
-      'typescript-language-server',
       'eslint-lsp',
-      'html-lsp',
-      'css-lsp',
     })
     require('mason-tool-installer').setup { ensure_installed = ensure_installed }
 
