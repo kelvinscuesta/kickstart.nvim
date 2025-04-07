@@ -143,9 +143,12 @@ return {
           map('<leader>th', function()
             vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled { bufnr = event.buf })
           end, '[T]oggle Inlay [H]ints')
+          vim.lsp.inlay_hint.enable(true)
         end
       end,
     })
+
+    -- inlay hints
 
     -- Diagnostic Config
     -- See :help vim.diagnostic.Opts
@@ -204,7 +207,21 @@ return {
       -- But for many setups, the LSP (`ts_ls`) will work just fine
       -- ts_ls = {},
       --
-      gopls = {},
+      gopls = {
+        settings = {
+          gopls = {
+            hints = {
+              rangeVariableTypes = true,
+              parameterNames = true,
+              constantValues = true,
+              assignVariableTypes = true,
+              compositeLiteralFields = true,
+              compositeLiteralTypes = true,
+              functionTypeParameters = true,
+            },
+          },
+        },
+      },
       cssls = {},
       css_variables = {},
       cssmodules_ls = {},
@@ -216,7 +233,20 @@ return {
       prettierd = {},
       shellcheck = {},
       vtsls = {},
-      vimls = {},
+      vimls = {
+        settings = {
+          typescript = {
+            inlayHints = {
+              parameterNames = { enabled = 'all' },
+              parameterTypes = { enabled = true },
+              variableTypes = { enabled = true },
+              propertyDeclarationTypes = { enabled = true },
+              functionLikeReturnTypes = { enabled = true },
+              enumMemberValues = { enabled = true },
+            },
+          },
+        },
+      },
 
       lua_ls = {
         -- cmd = { ... },
