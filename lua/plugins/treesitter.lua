@@ -6,8 +6,6 @@ return { -- Highlight, edit, and navigate code
   opts = {
     ensure_installed = {
       'bash',
-      'c',
-      'diff',
       'html',
       'css',
       'graphql',
@@ -17,10 +15,11 @@ return { -- Highlight, edit, and navigate code
       'lua',
       'luadoc',
       'markdown',
-      'query',
       'vim',
-      'vimdoc',
       'go',
+      'gomod',
+      'gowork',
+      'gosum',
       'git_config',
       'haskell',
       'sql',

@@ -46,3 +46,19 @@ vim.opt.timeoutlen = 300 -- Decrease mapped sequence wait time
 -- Sets how neovim will display certain whitespace characters in the editor.
 vim.opt.list = true
 vim.opt.listchars = { tab = '» ', trail = '·', nbsp = '␣' }
+
+-- set these off since handled by other plugins now
+vim.opt.syntax = 'off'
+
+vim.opt.foldenable = false
+
+vim.opt.spell = false
+
+-- turn this on when needing to investigate, otherwise it hurts performance
+vim.lsp.set_log_level 'off'
+
+-- https://vi.stackexchange.com/a/5318/12823
+vim.g.matchparen_timeout = 2
+vim.g.matchparen_insert_timeout = 2
+
+-- performance url https://github.com/LazyVim/LazyVim/discussions/326

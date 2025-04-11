@@ -15,11 +15,11 @@ return {
         ignore_focus = {},
         always_divide_middle = true,
         always_show_tabline = true,
-        globalstatus = false,
+        globalstatus = true,
         refresh = {
-          statusline = 100,
-          tabline = 100,
-          winbar = 100,
+          statusline = 1000,
+          tabline = 1000,
+          winbar = 1000,
         },
       },
       sections = {
@@ -27,8 +27,8 @@ return {
         lualine_b = { 'branch', 'diff', 'diagnostics' },
         lualine_c = { 'pretty_path' },
         lualine_x = { 'encoding', 'fileformat', 'filetype' },
-        lualine_y = { 'progress' },
-        lualine_z = { 'location' },
+        lualine_y = {},
+        lualine_z = { 'progress', 'location' },
       },
       inactive_sections = {
         lualine_a = {},
@@ -38,9 +38,11 @@ return {
         lualine_y = {},
         lualine_z = {},
       },
+      tabline = {},
       winbar = {},
       inactive_winbar = {},
       extensions = {},
     }
+    vim.opt.laststatus = 3
   end,
 }
