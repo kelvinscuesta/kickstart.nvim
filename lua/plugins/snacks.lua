@@ -13,8 +13,18 @@ return {
       enabled = true,
       style = 'fancy',
     },
-    picker = { enabled = true },
-    quickfile = { enabled = true },
+    picker = {
+      enabled = true,
+      layout = {
+        width = 0.75,
+        height = 0.75,
+      },
+      sources = {
+        explorer = {
+          layout = { preview = true },
+        },
+      },
+    },
     scope = { enabled = true },
     statuscolumn = { enabled = true },
     words = { enabled = true },

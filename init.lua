@@ -1,5 +1,9 @@
+-- enable experimental lua loader
+vim.loader.enable(true)
+
 require 'config.keymap'
 require 'config.options'
+require 'config.autocmds'
 require 'config.lazy'
 
 vim.diagnostic.config { virtual_lines = true }

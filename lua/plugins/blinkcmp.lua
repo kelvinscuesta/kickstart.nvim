@@ -25,10 +25,11 @@ return {
     -- C-k: Toggle signature help (if signature.enabled = true)
     --
     -- See :h blink-cmp-config-keymap for defining your own keymap
-    keymap = { preset = 'super-tab' },
+    keymap = { preset = 'default' },
     signature = { enabled = true },
 
     appearance = {
+      use_nvim_cmp_as_default = false,
       -- 'mono' (default) for 'Nerd Font Mono' or 'normal' for 'Nerd Font'
       -- Adjusts spacing to ensure icons are aligned
       nerd_font_variant = 'mono',
@@ -36,10 +37,16 @@ return {
 
     -- (Default) Only show the documentation popup when manually triggered
     completion = {
+      accept = {
+        auto_brackets = {
+          enabled = true,
+        },
+      },
       documentation = { auto_show = true },
       ghost_text = { enabled = true },
       menu = {
         draw = {
+          treesitter = { 'lsp' },
           -- We don't need label_description now because label and label_description are already
           -- combined together in label by colorful-menu.nvim.
           columns = { { 'kind_icon' }, { 'label', gap = 1 } },

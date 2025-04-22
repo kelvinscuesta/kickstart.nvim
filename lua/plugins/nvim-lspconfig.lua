@@ -194,6 +194,14 @@ return {
       docker_compose_language_service = {},
       dockerls = {},
       vtsls = {
+        filetypes = {
+          'javascript',
+          'javascriptreact',
+          'javascript.jsx',
+          'typescript',
+          'typescriptreact',
+          'typescript.tsx',
+        },
         settings = {
           complete_function_calls = true,
           vtsls = {
@@ -225,6 +233,12 @@ return {
           },
         },
       },
+      eslint = {
+        settings = {
+          workingDirectories = { mode = 'auto' },
+        },
+      },
+      prettier = {},
       ruby_lsp = {},
       rubocop = {},
       sorbet = {},

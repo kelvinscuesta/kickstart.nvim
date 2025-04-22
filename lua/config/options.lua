@@ -49,6 +49,7 @@ vim.opt.listchars = { tab = '» ', trail = '·', nbsp = '␣' }
 
 -- set these off since handled by other plugins now
 vim.opt.syntax = 'off'
+vim.cmd.syntax 'manual'
 
 vim.opt.foldenable = false
 
@@ -62,3 +63,77 @@ vim.g.matchparen_timeout = 2
 vim.g.matchparen_insert_timeout = 2
 
 -- performance url https://github.com/LazyVim/LazyVim/discussions/326
+
+vim.opt.laststatus = 3
+
+vim.opt.linebreak = true -- wrap lines at convenient points
+vim.g.markdown_recommended_style = 0
+
+vim.g.icons = {
+  misc = {
+    dots = '󰇘',
+  },
+  ft = {
+    octo = '',
+  },
+  dap = {
+    Stopped = { '󰁕 ', 'DiagnosticWarn', 'DapStoppedLine' },
+    Breakpoint = ' ',
+    BreakpointCondition = ' ',
+    BreakpointRejected = { ' ', 'DiagnosticError' },
+    LogPoint = '.>',
+  },
+  diagnostics = {
+    Error = ' ',
+    Warn = ' ',
+    Hint = ' ',
+    Info = ' ',
+  },
+  git = {
+    added = ' ',
+    modified = ' ',
+    removed = ' ',
+  },
+  kinds = {
+    Array = ' ',
+    Boolean = '󰨙 ',
+    Class = ' ',
+    Codeium = '󰘦 ',
+    Color = ' ',
+    Control = ' ',
+    Collapsed = ' ',
+    Constant = '󰏿 ',
+    Constructor = ' ',
+    Copilot = ' ',
+    Enum = ' ',
+    EnumMember = ' ',
+    Event = ' ',
+    Field = ' ',
+    File = ' ',
+    Folder = ' ',
+    Function = '󰊕 ',
+    Interface = ' ',
+    Key = ' ',
+    Keyword = ' ',
+    Method = '󰊕 ',
+    Module = ' ',
+    Namespace = '󰦮 ',
+    Null = ' ',
+    Number = '󰎠 ',
+    Object = ' ',
+    Operator = ' ',
+    Package = ' ',
+    Property = ' ',
+    Reference = ' ',
+    Snippet = '󱄽 ',
+    String = ' ',
+    Struct = '󰆼 ',
+    Supermaven = ' ',
+    TabNine = '󰏚 ',
+    Text = ' ',
+    TypeParameter = ' ',
+    Unit = ' ',
+    Value = ' ',
+    Variable = '󰀫 ',
+  },
+}
