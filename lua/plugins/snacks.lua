@@ -16,12 +16,12 @@ return {
     picker = {
       enabled = true,
       layout = {
-        width = 0.75,
-        height = 0.75,
+        width = 0.90,
+        height = 0.90,
       },
       sources = {
         explorer = {
-          layout = { preview = true },
+          layout = { preview = true, width = 0.75 },
         },
       },
     },
