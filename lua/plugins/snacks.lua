@@ -7,7 +7,7 @@ return {
     dashboard = { enabled = true },
     explorer = { enabled = true },
     image = { enabled = true },
-    indent = { enabled = true, animate = { enabled = false } },
+    indent = { enabled = true, animate = { enabled = false }, chunk = { enabled = true } },
     input = { enabled = true },
     notifier = {
       enabled = true,
@@ -16,12 +16,20 @@ return {
     picker = {
       enabled = true,
       layout = {
-        width = 0.90,
-        height = 0.90,
+        cycle = true,
+        preset = 'default',
+        layout = {
+          width = 0.95,
+          height = 0.95,
+        },
       },
       sources = {
         explorer = {
-          layout = { preview = true, width = 0.75 },
+          layout = {
+            layout = {
+              width = 0.5,
+            },
+          },
         },
       },
     },

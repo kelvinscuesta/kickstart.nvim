@@ -188,6 +188,7 @@ return {
           },
         },
       },
+      hls = {},
       cssls = {},
       css_variables = {},
       cssmodules_ls = {},
