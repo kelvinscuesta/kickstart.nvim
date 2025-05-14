@@ -137,3 +137,6 @@ vim.g.icons = {
     Variable = '󰀫 ',
   },
 }
+
+-- treesitter support for zsh
+vim.treesitter.language.register('bash', 'zsh')

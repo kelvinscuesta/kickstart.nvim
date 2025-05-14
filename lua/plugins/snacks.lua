@@ -15,6 +15,7 @@ return {
     },
     picker = {
       enabled = true,
+      hidden = true,
       layout = {
         cycle = true,
         preset = 'default',
@@ -24,7 +25,11 @@ return {
         },
       },
       sources = {
+        files = {
+          hidden = true,
+        },
         explorer = {
+          hidden = true,
           layout = {
             layout = {
               width = 0.5,
