@@ -189,6 +189,9 @@ return {
         },
       },
       hls = {},
+      bashls = {
+        filetypes = { 'sh', 'zsh' },
+      },
       cssls = {},
       css_variables = {},
       cssmodules_ls = {},
@@ -236,14 +239,31 @@ return {
         },
       },
       eslint = {
-        settings = {
-          workingDirectories = { mode = 'auto' },
+        enable = true,
+        format = { enable = true }, -- this will enable formatting
+        packageManager = 'yarn',
+        autoFixOnSave = true,
+        codeActionsOnSave = {
+          mode = 'all',
+          rules = { '!debugger', '!no-only-tests/*' },
+        },
+        lintTask = {
+          enable = true,
         },
       },
-      prettier = {},
-      ruby_lsp = {},
-      rubocop = {},
-      sorbet = {},
+      sorbet = {
+        cmd = { 'bundle', 'exec', 'srb', 'tc', '--lsp' },
+        filetypes = { 'ruby' },
+        -- root_dir = lspconfig.util.root_pattern("Gemfile", ".git"),
+        capabilities = capabilities,
+      },
+
+      rubocop = {
+        cmd = { 'bundle', 'exec', 'rubocop', '--lsp', '--no-server' },
+        filetypes = { 'ruby' },
+        -- root_dir = lspconfig.util.root_pattern("Gemfile", ".git"),
+        capabilities = capabilities,
+      },
       lua_ls = {
         settings = {
           Lua = {

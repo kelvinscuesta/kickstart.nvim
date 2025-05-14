@@ -56,7 +56,7 @@ vim.opt.foldenable = false
 vim.opt.spell = false
 
 -- turn this on when needing to investigate, otherwise it hurts performance
-vim.lsp.set_log_level 'off'
+--vim.lsp.set_log_level 'off'
 
 -- https://vi.stackexchange.com/a/5318/12823
 vim.g.matchparen_timeout = 2
